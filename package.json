@@ -1,0 +1,28 @@
+{
+  "name": "auth_feature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start server": "node main.js",
+    "dev server": "nodemon main.js",
+    "migrate": "npx prisma migrate dev --name init",
+    "prisma generate": "npx prisma generate"
+  },
+  "author": "zAnz",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prisma": "^5.12.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.12.1",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
