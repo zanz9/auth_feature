@@ -1,9 +1,8 @@
-const {PrismaClient} = require("@prisma/client");
-const bcrypt = require("bcrypt");
-const UserDto = require("../../../dto/UserDto");
-const ApiError = require("../../../exceptions/ApiError");
-
-const TokenService = require("./TokenService");
+import {PrismaClient} from "@prisma/client";
+import bcrypt from 'bcrypt'
+import TokenService from "./TokenService.js";
+import ApiError from "../../../exceptions/ApiError.js";
+import UserDto from "../../../dto/UserDto.js";
 
 class AuthService {
     prisma = new PrismaClient()
@@ -46,4 +45,4 @@ class AuthService {
     }
 }
 
-module.exports = new AuthService()
+export default new AuthService()

@@ -1,8 +1,12 @@
-const express = require('express')
-const cookieParser = require("cookie-parser");
-const cors = require('cors')
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import cors from 'cors'
 
-require('dotenv').config()
+import dotenv from 'dotenv'
+import router from "./router/router.js";
+import exception from "./router/exception.js";
+
+dotenv.config()
 const app = express()
 
 const PORT = process.env.PORT || 3000
@@ -16,8 +20,8 @@ app.use(cors({
 
 // app.use('/', express.static(path.resolve(__dirname, 'dist')))
 
-app.use('/api', require('./router/router'))
-app.use(require('./router/exception'))
+app.use('/api', router)
+app.use(exception)
 
 app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`)

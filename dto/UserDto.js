@@ -1,4 +1,4 @@
-class UserDto {
+export default class UserDto {
     id
     email
 
@@ -8,4 +8,3 @@ class UserDto {
     }
 }
 
-module.exports = UserDto

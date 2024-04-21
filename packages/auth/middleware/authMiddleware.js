@@ -1,7 +1,7 @@
-const ApiError = require("../../../exceptions/ApiError");
-const {TokenService} = require("../");
+import ApiError from "../../../exceptions/ApiError.js";
+import TokenService from "../service/TokenService.js";
 
-module.exports = async function (req, res, next) {
+export default async function (req, res, next) {
     try {
         const authorizationHeader = req.headers.authorization
         if (!authorizationHeader) return next(ApiError.Forbidden("empty header"))

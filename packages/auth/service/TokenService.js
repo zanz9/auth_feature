@@ -1,9 +1,9 @@
-const jwt = require("jsonwebtoken")
-const {PrismaClient} = require("@prisma/client");
-const {TokenExpiredError} = require("jsonwebtoken");
+import jwt from 'jsonwebtoken'
 
-const ApiError = require("../../../exceptions/ApiError");
-const UserDto = require("../../../dto/UserDto");
+const TokenExpiredError = jwt.TokenExpiredError
+import {PrismaClient} from "@prisma/client";
+import ApiError from "../../../exceptions/ApiError.js";
+import UserDto from "../../../dto/UserDto.js";
 
 const expAccess = '1h'
 const expRefresh = '30d'
@@ -66,4 +66,4 @@ class TokenService {
     }
 }
 
-module.exports = new TokenService()
+export default new TokenService()
