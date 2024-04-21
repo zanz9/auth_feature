@@ -1,18 +1,17 @@
-const {Router} = require("express");
-const {body} = require("express-validator");
+import {Router} from "express";
+import {body} from "express-validator";
+import AuthController from "../../packages/auth/controller/AuthController.js";
 
-const AuthController = require("../../packages/auth/controller/AuthController");
-
-const router = Router()
-router.post('/register',
+const authRouter = Router()
+authRouter.post('/register',
     body('email').isEmail(),
     body('password').isLength({min: 8, max: 32}),
     AuthController.register)
-router.post('/login',
+authRouter.post('/login',
     body('email').isEmail(),
     body('password').isLength({min: 8, max: 32}),
     AuthController.login)
-router.get('/logout', AuthController.logout)
-router.get('/refresh', AuthController.refresh)
+authRouter.get('/logout', AuthController.logout)
+authRouter.get('/refresh', AuthController.refresh)
 
-module.exports = router
+export default authRouter

@@ -1,6 +1,7 @@
-const Router = require('express').Router
+import {Router} from 'express'
+
 const router = Router()
 
 router.use('/auth', require('./nested/auth'))
 
-module.exports = router
+export default router
