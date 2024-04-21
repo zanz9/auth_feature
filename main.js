@@ -5,6 +5,8 @@ const cors = require('cors')
 require('dotenv').config()
 const app = express()
 
+const PORT = process.env.PORT || 3000
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
@@ -17,6 +19,6 @@ app.use(cors({
 app.use('/api', require('./router/router'))
 app.use(require('./router/exception'))
 
-app.listen(process.env.PORT, () => {
-    console.log(`Example app listening on port ${process.env.PORT}`)
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
 })
